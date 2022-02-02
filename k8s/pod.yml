@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: motd
+  labels:
+    app: motd
+spec:
+  containers:
+  - name: motd
+    image: damsdock/motd_ds:latest

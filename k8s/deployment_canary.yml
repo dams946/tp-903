@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploymentcanary
+  labels:
+    app: motd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: motd
+  template:
+    metadata:
+      labels:
+        app: motd
+    spec:
+      containers:
+      - name: motd
+        image: damsdock/motd_ds:latest
+        env: 
+         - name: MESSAGE
+           valueFrom: 
+             configMapKeyRef:
+                name: dams-config
+                key: msg

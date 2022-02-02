@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dams-config
+
+data: 
+  #
+  msg: "Do not eat the yellow snow!"
