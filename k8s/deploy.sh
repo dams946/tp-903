@@ -15,7 +15,7 @@ echo "------------------------------------------------------------------"
 
 
 
-sudo docker build -t damsdock/motd_ds:$GIT_SHA
+sudo docker build -t damsdock/motd_ds:$GIT_SHA .
 if [ $? -ne 0 ]
 then
     echo "failled to build"
